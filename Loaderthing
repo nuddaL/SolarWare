@@ -1,0 +1,37 @@
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Blur = Instance.new("BlurEffect")
+
+Blur.Parent = game.Lighting
+
+Blur.Size = 12
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+
+local Window = OrionLib:MakeWindow({Name = "Orion Protection", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Verify",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Password",
+	Default = "Put the password in here.",
+	TextDisappear = true,
+	Callback = function(Value)
+        if Value == "SonarWare" then
+            print("Correct password, loading...")
+
+            Blur.Size = 0
+
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+
+             
+
+        else
+            game.Players.LocalPlayer:Kick("Incorrect password, please get the new one via the manager (susi#8221) ")
+        end
+	end	  
+})
