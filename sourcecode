@@ -103,6 +103,10 @@ Section:Slider("Radius", 0, 15, 100, function(value)
     print('you guessed it, working on this rn.')
 end)
 
+Section:Keybind("Keybind", "E", function()
+    print("The keybind was presesd")
+end)
+
 local Section = Tab:Section("Prediction")
 
 Section:Dropdown("Prediction", {"Disabled", "Enabled"}, "nil", function(value)
@@ -113,10 +117,18 @@ Section:Dropdown("Prediction intensity", {"1", "2", "3"}, "nil", function(value)
     print('everything in this tab is wip...')
 end)
 
+Section:Keybind("Keybind", "E", function()
+    print("The keybind was presesd")
+end)
+
 local Section = Tab:Section("Triggerbot")
 
 Section:Dropdown("Triggerbot", {"Disabled", "Enabled"}, "nil", function(value)
     print('WIP')
+end)
+
+Section:Keybind("Keybind", "E", function()
+    print("The keybind was presesd")
 end)
 
 local Tab = Library:Tab("Visuals/ESP")
@@ -168,6 +180,50 @@ local Section = Tab:Section("find us")
 local Section = Tab:Section("https://pastebin.com/UPWQq4Sy")
 
 local Section = Tab:Section("UPWQq4Sy")
+
+local Tab = Library:Tab("SnapConfig")
+
+local Section = Tab:Section("Speed")
+
+Section:Dropdown("Enabled?", {"Disabled", "Enabled"}, "nil", function(value)
+    print('work in progress')
+end)
+
+Section:Slider("Amount", 0, 50, 100, function(value)
+    print('idk')
+end)
+
+Section:Keybind("Keybind to snap", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Jump Power")
+
+Section:Dropdown("Enabled?", {"Disabled", "Enabled"}, "nil", function(value)
+    print('work in progress')
+end)
+
+Section:Slider("Amount", 0, 50, 100, function(value)
+    print('idk')
+end)
+
+Section:Keybind("Keybind to snap", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Gravity")
+
+Section:Dropdown("Enabled?", {"Disabled", "Enabled"}, "nil", function(value)
+    print('work in progress')
+end)
+
+Section:Slider("Amount", 0, 50, 100, function(value)
+    print('idk')
+end)
+
+Section:Keybind("Keybind to snap", "E", function()
+    print("The keybind was presesd")
+end)
 
 local Tab = Library:Tab("Misc")
 
