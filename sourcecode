@@ -113,6 +113,53 @@ Section:Dropdown("Prediction intensity", {"1", "2", "3"}, "nil", function(value)
     print('everything in this tab is wip...')
 end)
 
+local Section = Tab:Section("Triggerbot")
+
+Section:Dropdown("Triggerbot", {"Disabled", "Enabled"}, "nil", function(value)
+    print('WIP')
+end)
+
+local Tab = Library:Tab("Visuals/ESP")
+
+local Section = Tab:Section("Chars")
+
+Section:Dropdown("Chars", {"Disabled", "Enabled"}, "nil", function(value)
+    print('work in progress')
+end)
+
+Section:Slider("Transparency", 0, 5, 100, function(value)
+    print('siuuuuuuuuuuuuuuuuuuuuuuuuuuus')
+end)
+
+Section:Keybind("Keybind", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Box")
+
+Section:Dropdown("Box(s)", {"Disabled", "Enabled"}, "nil", function(value)
+    print('work in progress')
+end)
+
+Section:Dropdown("Dimension", {"2D", "3D"}, "nil", function(value)
+    print('3d is probs gonna be a roware ripoff lmfao')
+end)
+
+Section:Keybind("Keybind", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Reach")
+
+Section:Dropdown("Reach Shower", {"Disabled", "Enabled"}, "nil", function(value)
+    print('work in progress')
+end)
+
+Section:Keybind("Keybind", "E", function()
+    print("The keybind was presesd")
+end)
+
+
 local Tab = Library:Tab("Misc")
 
 local Section = Tab:Section(executor)
@@ -159,4 +206,10 @@ local Section = Tab:Section("Configuration")
 
 Section:Dropdown("Cfgs", {"nil", "cfgname1", "cfgname2"}, "nil", function(value)
     print('sorry we have to disable due to this script not having much to go off..')
+end)
+
+local Section = Tab:Section("Credits")
+
+Section:Dropdown("Credits", {"Owner - ducted#9422", "Scripter - susi#8221", "Pro - Punktike#4559", "Server holder - DarthCat#9127"}, "Credits", function(value)
+    print(value)
 end)
