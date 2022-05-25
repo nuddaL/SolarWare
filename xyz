@@ -1,0 +1,285 @@
+--[[
+joinDate.year.." Join Date
+Game.Players.LocalPlayer.AccountAge.." Day age
+Game.Players.LocalPlayer.Name
+AmountOfPlayers.." Players"
+--]]
+
+------------------
+
+
+local Players = game:GetService("Players")
+local AmountOfPlayers = #Players:GetPlayers()
+
+Players.PlayerAdded:Connect(function(Player)
+      AmountOfPlayers = AmountOfPlayers + 1
+end)
+
+Players.PlayerRemoving:Connect(function(Player)
+      AmountOfPlayers = AmountOfPlayers - 1
+end)
+
+
+
+------------------
+
+local Player = game.Players.LocalPlayer
+
+local joinTime = os.time() - (Player.AccountAge*86400)
+local joinDate = os.date("!*t", joinTime)
+
+------------------
+
+local executor = identifyexecutor()
+
+------------------
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Attrixx/FreeScripts/main/YTUILib1.lua"))():init("Solar.xyz")
+-----
+local Tab = Library:Tab("Legit")
+
+local Section = Tab:Section("Silent aim")
+
+Section:Dropdown("True?", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("Show fov", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Slider("FOV", 0, 5, 25, function(value)
+    print(value)
+end)
+
+Section:Keybind("Toggle", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Aimbot")
+
+Section:Dropdown("True?", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("Show fov", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Slider("FOV", 0, 5, 25, function(value)
+    print(value)
+end)
+
+Section:Keybind("Toggle", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Credits")
+
+Section:Dropdown("Silent aim", {"Attrixx", "CNYZ", "susi"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("Fov Slider", {"susi"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("Aimbot", {"CNYZ"}, "nil", function(value)
+    print(value)
+end)
+
+
+
+-----
+-----
+local Tab = Library:Tab("Rage")
+
+local Section = Tab:Section("Silent aim")
+
+Section:Dropdown("True?", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("Show fov", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Slider("FOV", 25, 50, 100, function(value)
+    print(value)
+end)
+
+Section:Keybind("Toggle", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Aimbot")
+
+Section:Dropdown("True?", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("Show fov", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Slider("FOV", 25, 50, 100, function(value)
+    print(value)
+end)
+
+Section:Keybind("Toggle", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Triggerbot")
+
+Section:Dropdown("True?", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("Show fov", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Slider("FOV", 25, 50, 100, function(value)
+    print(value)
+end)
+
+Section:Keybind("Toggle", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Credits")
+
+Section:Dropdown("Triggerbot", {"susi", "duna", "CNYZ"}, "nil", function(value)
+    print(value)
+end)
+
+
+
+-----
+-----
+local Tab = Library:Tab("Visuals")
+
+local Section = Tab:Section("Chars")
+
+Section:Dropdown("True?", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Slider("Transparency", 0, 25, 100, function(value)
+    print(value)
+end)
+
+Section:Keybind("Toggle", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Box(s)")
+
+Section:Dropdown("True?", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Keybind("Toggle", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Miscellaneous")
+
+Section:Slider("FOV", 5, 90, 120, function(value)
+    print(value)
+end)
+
+Section:Slider("Sight - studs", 100, 5000, 10000, function(value)
+    print(value)
+end)
+
+local Section = Tab:Section("Credits")
+
+Section:Dropdown("Chars", {"susi"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("FOV", {"CNYZ", "duna"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Dropdown("Box(s)", {"CNYZ", "susi"}, "nil", function(value)
+    print(value)
+end)
+
+
+
+-----
+-----
+local Tab = Library:Tab("Misc")
+
+local Section = Tab:Section(joinDate.year.." Join Date")
+
+local Section = Tab:Section(Game.Players.LocalPlayer.Name)
+
+local Section = Tab:Section(executor)
+
+local Section = Tab:Section('our awesome devs!')
+
+local Section = Tab:Section('Attrixx')
+
+local Section = Tab:Section('daimonds007')
+
+local Section = Tab:Section('duna')
+
+local Section = Tab:Section('CNYZ')
+
+
+
+-----
+-----
+local Tab = Library:Tab("Config")
+
+local Section = Tab:Section("")
+
+Section:Dropdown("Configurations", {"1", "2", "3"}, "File chooser", function(value)
+    print(value)
+end)
+
+Section:Dropdown("", {"Idle", "Save", "Load", "Delete"}, "Performed action", function(value)
+    print(value)
+end)
+
+-----
+-----
+local Tab = Library:Tab("Ne-Tech")
+
+local Section = Tab:Section("SnapConfig")
+
+Section:Slider("Speed", 0, 50, 100, function(value)
+    print(value)
+end)
+
+Section:Keybind("Toggle", "E", function()
+    print("The keybind was presesd")
+end)
+
+local Section = Tab:Section("Prediction")
+
+Section:Dropdown("Enabled?", {"false", "true"}, "nil", function(value)
+    print(value)
+end)
+
+Section:Slider("Legitamacy %", 0, 25, 100, function(value)
+    print(value)
+end)
+
+
+
+-----
+
+
+if AmountOfPlayers - 1 then
+    print(AmountOfPlayers)
+end
+
+if AmountOfPlayers + 1 then
+    print(AmountOfPlayers)
+end
