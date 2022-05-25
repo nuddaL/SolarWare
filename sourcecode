@@ -25,11 +25,17 @@ TextLabel.Text = "Loading..."
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 40.000
 
-wait(7)
+wait(3)
 
 Loader:Destroy()
 
------------------------
+
+----------------------------------------------------------------
+
+
+local opti = identifyexecutor()
+
+----------------------------------------------------------------
 
 local Players = game:GetService("Players")
 local AmountOfPlayers = #Players:GetPlayers()
@@ -56,11 +62,16 @@ local executor = identifyexecutor()
 
 ----------
 
-print("the real amount of players is"..AmountOfPlayers)
+if AmountOfPlayers - 1 then
+    print('real amount of players is '..AmountOfPlayers)
+end
+if AmountOfPlayers + 1 then
+    print('real amount of players is '..AmountOfPlayers)
+end
 
 ---------
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Attrixx/FreeScripts/main/YTUILib1.lua"))():init("SolarWare v1.1")
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Attrixx/FreeScripts/main/YTUILib1.lua"))():init("SolarWare v1.2")
 
 
 local Tab = Library:Tab("Local Player")
@@ -80,7 +91,29 @@ Section:Slider("Jumpower", 0, 50, 1000, function(value)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
 end)
 
-local Tab = Library:Tab("Client information")
+local Tab = Library:Tab("Aimbot")
+
+local Section = Tab:Section("Silent aim")
+
+Section:Dropdown("Silent aim", {"Disabled", "Enabled"}, "nil", function(value)
+    print('currently disabled due to not having a new silent aim script')
+end)
+
+Section:Slider("Radius", 0, 15, 100, function(value)
+    print('you guessed it, working on this rn.')
+end)
+
+local Section = Tab:Section("Prediction")
+
+Section:Dropdown("Prediction", {"Disabled", "Enabled"}, "nil", function(value)
+    print('currently disabled due to not having a new prediction script')
+end)
+
+Section:Dropdown("Prediction intensity", {"1", "2", "3"}, "nil", function(value)
+    print('everything in this tab is wip...')
+end)
+
+local Tab = Library:Tab("Misc")
 
 local Section = Tab:Section(executor)
 
@@ -91,3 +124,39 @@ local Section = Tab:Section(Game.Players.LocalPlayer.AccountAge.." Day age")
 local Section = Tab:Section(joinDate.year.." Join Date")
 
 local Section = Tab:Section(AmountOfPlayers.." Players")
+
+local Section = Tab:Section("Optimization")
+
+Section:Slider("Lighting quality", 0, 50, 100, function(value)
+    print('barely changes anything, good in optimization tho.')
+end)
+
+Section:Dropdown("PC quality", {"dogo shit", "mid-range", "god tier"}, "nil", function(value)
+    print('basically changes ur loading speed, dogo shit optimization coming soon')
+end)
+--------------------------
+if opti == "Synapse X" then
+    Section:Dropdown("Executor Optimization", {"1", "2", "3"}, "Fully optimized", function(value)
+        print('fully optimized executor')
+    end)
+end
+
+if opti == "KRNL" then
+    Section:Dropdown("Executor Optimization", {"1", "2", "3"}, "Half optimized", function(value)
+        print('half optimized executor')
+    end)
+end
+
+if opti == "ScriptWare" then
+    Section:Dropdown("Executor Optimization", {"1", "2", "3"}, "Fully optimized", function(value)
+        print('fully optimized executor')
+    end)
+end
+
+
+------------------------
+local Section = Tab:Section("Configuration")
+
+Section:Dropdown("Cfgs", {"nil", "cfgname1", "cfgname2"}, "nil", function(value)
+    print('sorry we have to disable due to this script not having much to go off..')
+end)
